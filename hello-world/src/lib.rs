@@ -4,7 +4,8 @@ use std::time::{SystemTime};
 #[derive(NativeClass)]
 #[inherit(Node2D)]
 struct HelloWorld{
-    colorsarray : Vec<gdnative::prelude::Color>,
+    //colorsarray : Vec<gdnative::prelude::Color>,
+    colorsarray: [Color; 9]
 }
 
 
@@ -12,6 +13,7 @@ struct HelloWorld{
 impl HelloWorld {
     fn new(_owner: &Node2D) -> Self {
         HelloWorld{
+            /*
             colorsarray: vec![
                 Color::from_rgba(0.0, 0.0, 0.0, 1.0),
                 Color::from_rgba(1.0, 0.0, 1.0, 1.0),
@@ -22,6 +24,18 @@ impl HelloWorld {
                 Color::from_rgba(1.0, 0.5, 0.0, 1.0),
                 Color::from_rgba(1.0, 1.0, 1.0, 1.0),
                 Color::from_rgba(1.0, 1.0, 1.0, 1.0)],
+            */
+            colorsarray:[
+                Color::from_rgba(0.0, 0.0, 0.0, 1.0),
+                Color::from_rgba(1.0, 0.0, 1.0, 1.0),
+                Color::from_rgba(0.0, 0.0, 1.0, 1.0),
+                Color::from_rgba(0.0, 1.0, 0.0, 1.0),
+                Color::from_rgba(0.0, 0.5, 1.0, 1.0),
+                Color::from_rgba(1.0, 0.0, 0.0, 1.0),
+                Color::from_rgba(1.0, 0.5, 0.0, 1.0),
+                Color::from_rgba(1.0, 1.0, 1.0, 1.0),
+                Color::from_rgba(1.0, 1.0, 1.0, 1.0)]
+
         }
     }
 
