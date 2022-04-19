@@ -34,7 +34,7 @@ impl HelloWorld {
 
 
     #[export]
-    fn _draw(&self, sn: &Node2D) {
+    fn _draw(&self, owner: &Node2D) {
         let sys_time = SystemTime::now();
         let mut c : Color;
         let l : f32=100.0;
@@ -60,7 +60,7 @@ impl HelloWorld {
                 else{
                     c=self.colorsarray[(8.0 * (n - 10.0) / (l - 10.0)).round() as usize];
                 }
-                sn.draw_rect(Rect2{position: Vector2{x:(i as f32)+500.0, y:(j as f32)}, size: Vector2{x:1.0, y:1.0}}, 
+                owner.draw_rect(Rect2{position: Vector2{x:(i as f32)+500.0, y:(j as f32)}, size: Vector2{x:1.0, y:1.0}}, 
                     c, true, 1.0, false);
             }
         }
